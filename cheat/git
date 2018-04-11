@@ -1,0 +1,21 @@
+git config --global user.name ""		#Username
+git config --global user.email m@il.ru		#E-mail
+git config --global code.editor vim 		#Config editor for git
+git config --list				#Check config
+git init					#Init repo in dir
+git status					#Show status current repo
+git add <file>|<dir>				#Add file/folder in index
+git diff					#Show what you change but not add in index without arguments
+git commit					#Accept change in repo
+git commit -m "Text"
+git commit --amend				#Change last commit
+git rm <file>					#Del from index
+git mv file_from file_to			#Move file
+git log						#Show log git
+git reset HEAD <file>				#Cancel indexing file
+git checkout -- <file>				#Cancel change file
+git remote -v					#Show remote repo
+git fetch <remote-name>				#Get data from remote projects
+git push origin master				
+git remote show <remote-server>			#Get more info about remote repo
+
