@@ -1,0 +1,41 @@
+*background:	#2d2d2d
+*foreground:    #ddeedd
+
+!black
+*color0:    #25374A
+*color8:    #3A526B
+!red
+*color1:    #BD4A4A
+*color9:    #CC6666
+!green
+*color2:    #B7CE42
+*color10:   #BDE077
+!yellow
+*color3:    #FEA63C
+*color11:   #FFE863
+!blue
+*color4:    #66AABB
+*color12:   #AACCBB
+!magenta
+*color5:    #F26B9E
+*color13:   #ff5879
+!cyan
+*color6:    #72AD8C
+*color14:   #9FE3BC
+!white
+*color7:    #DDEEDD
+*color15:   #FFFFFF
+
+!URxvt.geometry: 100x15
+
+URxvt*font: xft:PT Mono:size=11:antialias=true 
+URxvt*boldFont: xft:PT Mono:size=11:antialias=true 
+URxvt.tinting: #ffffff 
+URxvt*saveLines: 5000
+Rxvt*scrollBar: false
+URxvt.matcher.button: 1
+URxvt.underlineURLs: true
+URxvt.perl-ext-common: default,matcher,tabbedex
+URxvt.urlLauncher: /usr/bin/xdg-open
+URxvt.colorUL: #4682B4
+URxvt.tabbed.autohide: true
