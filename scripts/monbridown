@@ -1,0 +1,3 @@
+#!/bin/bash
+(xbacklight -dec 5%) & 
+(notify-send "$(xbacklight -get)") &
