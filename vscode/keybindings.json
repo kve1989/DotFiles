@@ -1,0 +1,19 @@
+// Поместите настраиваемые сочетания клавиш в этот файл, чтобы перезаписать клавиши по умолчанию.
+[
+    {
+        "key": "ctrl+shift+x",
+        "command": "workbench.action.terminal.kill"
+    },
+    {
+        "key": "ctrl+shift+x",
+        "command": "-workbench.view.extensions"
+    },
+    {
+        "key": "ctrl+alt+r",
+        "command": "python.execInTerminal"
+    },
+    {
+        "key": "ctrl+shift+alt+p",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    }
+]
