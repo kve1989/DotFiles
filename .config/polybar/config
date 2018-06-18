@@ -27,7 +27,7 @@ module-margin-right = 2
 font-0 = Ubuntu Nerd Font:pixelsize=10;1
 font-1 = FontAwesome:pixelsize=10;3
 
-modules-left = bswpm xwindow mpd
+modules-left = xwindow mpd
 modules-center = date 
 modules-right = xkeyboard xbacklight volume cpu memory wlan battery temperature
 
@@ -36,13 +36,13 @@ modules-right = xkeyboard xbacklight volume cpu memory wlan battery temperature
 ;tray-transparent = true
 ;tray-background = #0063ff
 
-wm-restack = bspwm
+;wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
 
-scroll-up = bspwm-desknext
-scroll-down = bspwm-deskprev
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -124,7 +124,6 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 
 headphone-id = 19
-
 [module/wlan]
 type = internal/network
 interface = wlo1

@@ -1,0 +1,12 @@
+! Enabled modi
+rofi.modi:                           window,run,ssh
+! Window opacity
+rofi.opacity:                        100
+! Window width
+rofi.width:                          50
+! Number of lines
+rofi.lines:                          15
+! Number of columns
+rofi.columns:                        1
+! Font to use
+rofi.font: Ubuntu 11
