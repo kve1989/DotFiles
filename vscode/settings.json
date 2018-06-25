@@ -8,7 +8,7 @@
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "emmet.triggerExpansionOnTab": true,
-    "files.autoSave": "on",
+    "files.autoSave": "onWindowChange",
     "git.ignoreMissingGitWarning": true,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
