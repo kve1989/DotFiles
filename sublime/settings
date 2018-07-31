@@ -25,3 +25,33 @@
 	"word_wrap": true,
 	"draw_white_space": "all"
 }
+
+-------------------------------------------------------------------------
+
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoFileName",
+		"Bootstrap 4 Autocomplete",
+		"Bootstrap 4 Snippets",
+		"BracketHighlighter",
+		"Color Highlighter",
+		"CSS3",
+		"Dracula Color Scheme",
+		"Emmet",
+		"HTML Nest Comments",
+		"JavaScript & NodeJS Snippets",
+		"Open Folder",
+		"Package Control",
+		"SFTP",
+		"SideBarEnhancements",
+		"Solarized Color Scheme",
+		"SublimeLinter",
+		"SublimeREPL",
+		"Theme - Spacegray"
+	]
+}
