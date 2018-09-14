@@ -22,6 +22,7 @@
     "workbench.statusBar.visible": true,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorCustomizations": {
+        "workbench.colorCustomizations": {
         "activityBar.background": "#282a36",
         "activityBar.border": "#282a36",
         "editorGroupHeader.tabsBackground": "#282a36",
@@ -35,6 +36,18 @@
         "tab.inactiveBackground": "#282a36",
         "editorGroupHeader.tabsBorder": "#282a36",
         "tab.activeBorder": "#282a36",
-        "tab.border": "#282a36"
-    }
+        "tab.border": "#282a36",
+        "titleBar.activeBackground": "#282a36",
+        "titleBar.inactiveBackground": "#282a36"
+    },
+    "php.validate.executablePath": "C:\\php\\php.exe",
+    "color-highlight.enable": true,
+    "color-highlight.markerType": "background",
+    "window.titleBarStyle": "custom",
+    "editor.minimap.enabled": false,
+    "workbench.activityBar.visible": true,
+    "editor.cursorBlinking": "smooth",
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.settings.editor": "json",
 }  
