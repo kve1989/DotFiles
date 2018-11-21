@@ -1,6 +1,7 @@
-var gulp      = require('gulp'), // Подключаем Gulp
-    sass        = require('gulp-sass'), //Подключаем Sass пакет,
-    browserSync = require('browser-sync'), // Подключаем Browser Sync
+var gulp         = require('gulp'), // Подключаем Gulp
+    sass         = require('gulp-sass'), //Подключаем Sass пакет,
+    browserSync  = require('browser-sync'), // Подключаем Browser Sync
+    notify       = require("gulp-notify"),
     autoprefixer = require('gulp-autoprefixer'); // Подключаем библиотеку для автоматического добавления префиксов;
 
 gulp.task('sass', function(){ // Создаем таск Sass
