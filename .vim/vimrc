@@ -1,116 +1,63 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin('~/.vim/plugged')
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-"---------=== Code/project navigation ===-------------
-Plugin 'scrooloose/nerdtree' 	    	" Project and file navigation
-Plugin 'majutsushi/tagbar'          	" Class/module browser
-"------------------=== Other ===----------------------
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'fisadev/FixedTaskList.vim'  	" Pending tasks list
-Plugin 'rosenfeld/conque-term'      	" Consoles as buffers
-Plugin 'tpope/vim-surround'	   	" Parentheses, brackets, quotes, XML tags, and more
-Plugin 'dracula/vim'
-"--------------=== Snippets support ===---------------
-Plugin 'garbas/vim-snipmate'		" Snippets manager
-Plugin 'MarcWeber/vim-addon-mw-utils'	" dependencies #1
-Plugin 'tomtom/tlib_vim'		" dependencies #2
-Plugin 'honza/vim-snippets'		" snippets repo
-"-------------=== Languages ===-----------------------
-Plugin 'mattn/emmet-vim'		" Emmet plugin HTML,CSS
+" Appearance
+Plug 'ryanoasis/vim-devicons'
 
-call vundle#end()            " required
+" Status line
+Plug 'itchyny/lightline.vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
-filetype on
-filetype plugin on
-filetype plugin indent on    " required
+" color schemas
+Plug 'morhetz/gruvbox'
+Plug 'mhartington/oceanic-next'
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+Plug 'ayu-theme/ayu-vim'
+call plug#end()
 
-"Basic
-set number
-set background=dark
-set showmatch
-set hlsearch
-set incsearch
-set mouse=a
-set noswapfile
-set nowritebackup
-set nobackup
-set encoding=utf-8
-set backspace=indent,eol,start
-set ruler
-set ttyfast
-set scrolloff=5
-set smarttab
-set expandtab
-set smartindent
-set tabstop=4
-set shiftwidth=4
 syntax on
 
-" Airline
-set statusline=2
-let g:airline_theme='badwolf'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+set encoding=UTF-8
+set background=dark
+set number
+set ruler
+set laststatus=2
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+set showmatch
+set mouse=a
+set nowritebackup
+set nobackup
+set noswapfile
+set autoindent
 
-" TagBar settings
-nmap <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 0 " автофокус на Tagbar при открытии
-
-" NerdTree settings 
-" show NERDTree on F3
-map <F3> :NERDTreeToggle<CR>
-"ignoring files with extension
+" NERDTree
+nnoremap <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 
-" Emmet settings - Ctrl-Z
-let g:user_emmet_leader_key='<C-Z>'
+" colorscheme gruvbox
+" colorscheme OceanicNext
+" let g:material_terminal_italics = 1
+" variants: default, palenight, ocean, lighter, darker, default-community,
+"           palenight-community, ocean-community, lighter-community,
+"           darker-community
+" let g:material_theme_style = 'darker'
+" colorscheme material
+if (has('termguicolors'))
+  set termguicolors
+endif
 
-" Buffers - explore/next/previous/close: Alt-F12, F12, Shift-F12, Ctrl-F12.
-nnoremap <silent> <M-F12> :BufExplorer<CR>
-nnoremap <silent> <F12> :bn<CR>
-nnoremap <silent> <S-F12> :bp<CR>
-nnoremap <silent> <C-F12> :bd<CR>
-"=====================================================
-" User hotkeys
-"=====================================================
-" autocomplit <Ctrl+Space>
-inoremap <C-space> <C-x><C-o>
+" variants: mirage, dark, dark
+" let ayucolor="mirage"
+" colorscheme ayu
 
-" switch bitween syntax
-nnoremap <leader>Th :set ft=htmljinja<CR>
-nnoremap <leader>Tp :set ft=python<CR>
-nnoremap <leader>Tj :set ft=javascript<CR>
-nnoremap <leader>Tc :set ft=css<CR>
-nnoremap <leader>Td :set ft=django<CR>
-
-"=====================================================
-" Languages support
-"=====================================================
-" --- JavaScript ---
-let javascript_enable_domhtmlcss=1
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd BufNewFile,BufRead *.json setlocal ft=javascript
-
-" --- HTML ---
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-
-" --- template language support (SGML / XML too) ---
-autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-autocmd bufnewfile,bufread *.rhtml setlocal ft=eruby
-autocmd BufNewFile,BufRead *.mako setlocal ft=mako
-autocmd BufNewFile,BufRead *.tmpl setlocal ft=htmljinja
-autocmd BufNewFile,BufRead *.py_tmpl setlocal ft=python
-let html_no_rendering=1
-let g:closetag_default_xml=1
-let g:sparkupNextMapping='<c-l>'
-autocmd FileType html,htmldjango,htmljinja,eruby,mako let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/scripts/closetag.vim
-
-" --- CSS ---  Ctrl-x, Ctrl-o
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType css setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+" Airline
+" set statusline=2
+" let g:airline_theme='badwolf'
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#formatter = 'unique_tail'
