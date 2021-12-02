@@ -7,14 +7,15 @@ Plug 'ryanoasis/vim-devicons'
 
 " Status line
 Plug 'itchyny/lightline.vim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " color schemas
 Plug 'morhetz/gruvbox'
 Plug 'mhartington/oceanic-next'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'ayu-theme/ayu-vim'
+Plug 'dracula/vim', { 'name': 'dracula' }
 call plug#end()
 
 syntax on
@@ -35,11 +36,16 @@ set nobackup
 set noswapfile
 set autoindent
 
+highlight Whitespace ctermfg=Grey
+highlight Comment cterm=italic
+highlight CursorLine cterm=NONE ctermbg=Black 
+
 " NERDTree
 nnoremap <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 
-" colorscheme gruvbox
+" colorscheme dracula
+
 " colorscheme OceanicNext
 " let g:material_terminal_italics = 1
 " variants: default, palenight, ocean, lighter, darker, default-community,
@@ -47,6 +53,7 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o
 "           darker-community
 " let g:material_theme_style = 'darker'
 " colorscheme material
+
 if (has('termguicolors'))
   set termguicolors
 endif
