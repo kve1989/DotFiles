@@ -1,7 +1,5 @@
 Import-Module posh-git
 Import-Module oh-my-posh
-$omp_config = Join-Path $PSScriptRoot ".\takuya.omp.json"
-oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
 Import-Module -Name Terminal-Icons
 
 Invoke-Expression (&starship init powershell)
