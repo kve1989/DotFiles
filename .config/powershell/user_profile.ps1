@@ -1,8 +1,10 @@
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-PoshPrompt Appendix
+$omp_config = Join-Path $PSScriptRoot ".\takuya.omp.json"
+oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
+Import-Module -Name Terminal-Icons
 
-Import-Module Terminal-Icons
+Invoke-Expression (&starship init powershell)
 
 # PSReadLine
 Set-PSReadLineOption -EditMode Emacs
@@ -16,6 +18,7 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory
 
 # Alias
 Set-Alias ll ls
+Set-Alias vim nvim
 Set-Alias grep findstr
 
 # Utilities
@@ -24,7 +27,11 @@ function which ($command) {
     Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
 
-function take ($folder) {
-    mkdir $folder
-    cd $folder
+function take ($namefolder) {
+	mkdir $namefolder
+	cd $namefolder
+}
+
+function connect ($computer) {
+	Enter-PSSession -Computer $computer
 }
