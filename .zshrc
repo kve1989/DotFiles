@@ -15,7 +15,6 @@ alias la='exa --icons  -a --color=always --group-directories-first'  # all files
 alias ll='exa --icons  -l --color=always --group-directories-first'  # long format
 alias lt='exa --icons  -aT --color=always --group-directories-first' # tree listing
 alias l.='exa --icons  -a | egrep "^\."'
-cd ~
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
