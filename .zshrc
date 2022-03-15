@@ -8,6 +8,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias pbcopy='clip.exe'
 alias pbpaste='powershell.exe -Command get-clipboard'
+alias reboottowin="sudo su -c 'efibootmgr -n 0000 && sync && reboot'"
 
 # Changing "ls" to "exa"
 alias ls='exa --icons -al --color=always --group-directories-first' # my preferred listing
