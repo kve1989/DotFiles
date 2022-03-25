@@ -54,6 +54,8 @@ case $_distro in
 esac
 
 export STARSHIP_DISTRO="$ICON"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export PYTHONDONTWRITEBYTECODE=1
 
 #Launch Starship
 eval "$(starship init zsh)"
