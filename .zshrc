@@ -7,6 +7,7 @@ plugins=(git autojump tmux zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 alias reboottowin="sudo su -c 'efibootmgr -n 0000 && sync && reboot'"
+alias dnf="sudo dnf"
 
 # Changing "ls" to "exa"
 alias ls='exa --icons -al --color=always --group-directories-first' # my preferred listing
