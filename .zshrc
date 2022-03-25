@@ -2,12 +2,10 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git nvm npm node autojump tmux zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git autojump tmux zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-alias pbcopy='clip.exe'
-alias pbpaste='powershell.exe -Command get-clipboard'
 alias reboottowin="sudo su -c 'efibootmgr -n 0000 && sync && reboot'"
 
 # Changing "ls" to "exa"
@@ -16,12 +14,6 @@ alias la='exa --icons  -a --color=always --group-directories-first'  # all files
 alias ll='exa --icons  -l --color=always --group-directories-first'  # long format
 alias lt='exa --icons  -aT --color=always --group-directories-first' # tree listing
 alias l.='exa --icons  -a | egrep "^\."'
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-eval "$(starship init zsh)"
 
 # find out which distribution we are running on
 LFILE="/etc/*-release"
@@ -61,3 +53,6 @@ case $_distro in
 esac
 
 export STARSHIP_DISTRO="$ICON"
+
+#Launch Starship
+eval "$(starship init zsh)"
