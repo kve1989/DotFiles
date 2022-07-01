@@ -16,6 +16,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim', { 'name': 'dracula' }
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 syntax on
@@ -61,6 +62,8 @@ endif
 " variants: mirage, dark, dark
 " let ayucolor="mirage"
 " colorscheme ayu
+
+" colorscheme nord
 
 " Airline
 " set statusline=2
