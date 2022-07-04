@@ -1,3 +1,9 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -45,7 +51,9 @@ highlight CursorLine cterm=NONE ctermbg=Black
 nnoremap <F3> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
 
-" colorscheme dracula
+if (has('termguicolors'))
+  set termguicolors
+endif
 
 " colorscheme OceanicNext
 " let g:material_terminal_italics = 1
@@ -55,15 +63,13 @@ let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o
 " let g:material_theme_style = 'darker'
 " colorscheme material
 
-if (has('termguicolors'))
-  set termguicolors
-endif
-
+" colorscheme ayu
 " variants: mirage, dark, dark
 " let ayucolor="mirage"
-" colorscheme ayu
 
 " colorscheme nord
+" colorscheme dracula
+" colorscheme gruvbox
 
 " Airline
 " set statusline=2
