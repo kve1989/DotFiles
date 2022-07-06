@@ -375,7 +375,7 @@ def init_widgets_list():
                        fontsize = 37
                        ),
              widget.Net(
-                       interface = "eth0",
+                       interface = "wlo0",
                        format = 'Net: {down} ↓↑ {up}',
                        foreground = colors[1],
                        background = colors[3],
