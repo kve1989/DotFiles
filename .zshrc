@@ -44,7 +44,6 @@ case $_distro in
     *slackware*)             ICON="";;
     *linuxmint*)             ICON="";;
     *alpine*)                ICON="";;
-    *aosc*)                  ICON="";;
     *nixos*)                 ICON="";;
     *devuan*)                ICON="";;
     *manjaro*)               ICON="";;
