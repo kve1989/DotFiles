@@ -5,6 +5,10 @@ My personal config files for Linux and Windows 10+
 ```bash
 git tmux zip mc net-tools zsh unrar autojump htop lnav tree bat exa wget curl openssh sudo telnet
 ```
+## Install oh-my-zsh
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
 ## Install Neovim (Ubuntu)
 ```bash
