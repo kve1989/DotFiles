@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias reboottowin="sudo su -c 'efibootmgr -n 0000 && sync && reboot'"
+
 # Changing "ls" to "exa"
 alias ls='exa --icons -al --color=always --group-directories-first' # my preferred listing
 alias la='exa --icons  -a --color=always --group-directories-first'  # all files and dirs
