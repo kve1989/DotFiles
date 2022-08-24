@@ -10,11 +10,13 @@ alias reboottowin="sudo su -c 'efibootmgr -n 0000 && sync && reboot'"
 alias dnf="sudo dnf"
 
 # Changing "ls" to "exa"
-alias ls='exa --icons -al --color=always --group-directories-first' # my preferred listing
-alias la='exa --icons  -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa --icons  -l --color=always --group-directories-first'  # long format
-alias lt='exa --icons  -aT --color=always --group-directories-first' # tree listing
-alias l.='exa --icons  -a | egrep "^\."'
+if [ -x "$(command -v exa)"]; then
+    alias ls='exa --icons -al --color=always --group-directories-first' # my preferred listing
+    alias la='exa --icons  -a --color=always --group-directories-first'  # all files and dirs
+    alias ll='exa --icons  -l --color=always --group-directories-first'  # long format
+    alias lt='exa --icons  -aT --color=always --group-directories-first' # tree listing
+    alias l.='exa --icons  -a | egrep "^\."'
+fi
 
 # find out which distribution we are running on
 LFILE="/etc/*-release"
