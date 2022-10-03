@@ -10,7 +10,7 @@ alias reboottowin="sudo su -c 'efibootmgr -n 0000 && sync && reboot'"
 alias dnf="sudo dnf"
 
 # Changing "ls" to "exa"
-if [ -x "$(command -v exa)"]; then
+if [ -x "$(command -v exa)" ]; then
     alias ls='exa --icons -al --color=always --group-directories-first' # my preferred listing
     alias la='exa --icons  -a --color=always --group-directories-first'  # all files and dirs
     alias ll='exa --icons  -l --color=always --group-directories-first'  # long format
