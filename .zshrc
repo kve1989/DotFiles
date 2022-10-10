@@ -11,11 +11,11 @@ alias dnf="sudo dnf"
 
 # Changing "ls" to "exa"
 if [ -x "$(command -v exa)" ]; then
-    alias ls='exa --icons -al --color=always --group-directories-first' # my preferred listing
+    alias ls='exa --icons -agl --color=always --group-directories-first' # my preferred listing
     alias la='exa --icons  -a --color=always --group-directories-first'  # all files and dirs
-    alias ll='exa --icons  -l --color=always --group-directories-first'  # long format
-    alias lt='exa --icons  -aT --color=always --group-directories-first' # tree listing
-    alias l.='exa --icons  -a | egrep "^\."'
+    alias ll='exa --icons  -lg --color=always --group-directories-first'  # long format
+    alias lt='exa --icons  -agT --color=always --group-directories-first' # tree listing
+    alias l.='exa --icons  -ag | egrep "^\."'
 fi
 
 # find out which distribution we are running on
