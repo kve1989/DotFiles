@@ -23,6 +23,8 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'ayu-theme/ayu-vim'
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'arcticicestudio/nord-vim'
+Plug 'navarasu/onedark.nvim'
+
 call plug#end()
 
 syntax on
@@ -70,6 +72,7 @@ endif
 " colorscheme nord
 colorscheme dracula
 " colorscheme gruvbox
+" colorscheme onedark
 
 " Airline
 set statusline=2
