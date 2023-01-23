@@ -3,5 +3,5 @@ Install-Module -Name Terminal-Icons,posh-git,PSfzf,PSReadLine -Scope CurrentUser
 ```
 
 ```powershell
-scoop install oh-my-posh curl neovim starship bat
+scoop install oh-my-posh curl neovim starship bat fzf
 ```
