@@ -1,5 +1,5 @@
 ```powershell
-Install-Module -Name Terminal-Icons Posh-Git PSfzf -Scope CurrentUser -Repository PSGallery
+Install-Module -Name Terminal-Icons,posh-git,PSfzf -Scope CurrentUser -Repository PSGallery -Force
 ```
 
 ```powershell
