@@ -8,13 +8,13 @@ $all[╰─](238)$character"""
 
 # Shows an icon that should be included by zshrc script based on the distribution or os
 [env_var.STARSHIP_DISTRO]
-format = '[$env_value](bold white)'
+format = '[$env_value](bold white) '
 variable = "STARSHIP_DISTRO"
 disabled = false
 
 # Change the default prompt characters
 [character]
-success_symbol = "[](238)"
+success_symbol = "[](238) "
 error_symbol = "[](238) "
 
 # Disable standart module USERNAME 
@@ -25,8 +25,8 @@ format = "[$user]($style) "
 disabled = true
 show_always = true
 
-[env_var.USERNAME]
-variable = "USERNAME"
+[env_var.USER]
+variable = "USER"
 disabled = false
 format = '[$env_value]($style white bold) '
 
