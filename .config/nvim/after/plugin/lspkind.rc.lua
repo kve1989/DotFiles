@@ -5,7 +5,8 @@ lspkind.init({
   -- enables text annotations
   --
   -- default: true
-  mode = 'symbol',
+  -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+  mode = 'symbol_text',
 
   -- default symbol map
   -- can be either 'default' (requires nerd-fonts font) or
