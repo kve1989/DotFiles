@@ -1,5 +1,5 @@
 # ConfigFiles
-My personal config files for Linux and Windows 10+
+My personal config files for Linux and Windows 10+11
 
 ## Install need software
 ```bash
