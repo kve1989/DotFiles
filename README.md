@@ -3,8 +3,9 @@ My personal config files for Linux and Windows 10+11
 
 ## Install need software
 ```bash
-git tmux zip mc net-tools zsh unrar autojump htop lnav tree bat exa wget curl openssh sudo telnet
+git tmux zip mc net-tools zsh unrar autojump htop lnav tree bat exa wget curl 
 ```
+
 ## Install oh-my-zsh
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -16,6 +17,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/hlissner/zsh-autopair ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autopair
 ```
+
 ## Install Neovim (Ubuntu)
 ```bash
 sudo add-apt-repository ppa:neovim-ppa/stable
