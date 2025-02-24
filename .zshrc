@@ -1,73 +1,41 @@
 export ZSH="$HOME/.oh-my-zsh"
-
 ZSH_THEME="robbyrussell"
 
-plugins=(git autojump tmux  fzf zsh-autopair zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git docker docker-compose fzf python nvm sudo autojump tmux zsh-autopair zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# alias reboottowin="sudo su -c 'efibootmgr -n 0000 && sync && reboot'"
-# alias dnf="sudo dnf"
-alias myip='curl ifconfig.co'
-alias dusage='du -ah --max-depth=1 $(pwd) | sort -rh | head -n 10'
-alias bfiles='/usr/bin/ls --human-readable --size -1 -S --classify | head -n 20'
-
-function ipa {
-  curl -s https://ifconfig.co/json?ip=$1 | jq 'del(.usage_agent)'
-}
-
-function ipc {
-  curl -s https://ifconfig.co/json?ip=$1 | jq '.country'
-}
+if [ -z "$TMUX" ]; then
+    tmux attach-session -t 4 || tmux new
+fi
 
 # Changing "ls" to "exa"
 if [ -x "$(command -v exa)" ]; then
-    alias ls='exa --icons -agl --color=always --group-directories-first' # my preferred listing
-    alias la='exa --icons  -a --color=always --group-directories-first'  # all files and dirs
-    alias ll='exa --icons  -lg --color=always --group-directories-first'  # long format
-    alias lt='exa --icons  -agT --color=always --group-directories-first' # tree listing
-    alias l.='exa --icons  -ag | egrep "^\."'
+    alias ls='exa --icons -alg --color=always --group-directories-first' # my preferred listing
+    alias la='exa --icons -a  --color=always --group-directories-first'  # all files and dirs
+    alias ll='exa --icons -lg  --color=always --group-directories-first'  # long format
+    alias lt='exa --icons -aTg --color=always --group-directories-first' # tree listing
+    alias l.='exa --icons -ag | egrep "^\."'
 fi
 
-# find out which distribution we are running on
-LFILE="/etc/*-release"
-MFILE="/System/Library/CoreServices/SystemVersion.plist"
-if [[ -f $LFILE ]]; then
-  _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
-elif [[ -f $MFILE ]]; then
-  _distro="macos"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+### ALIASES
+if [[ -n "$WSL_DISTRO_NAME" ]]; then
+    alias pbcopy='clip.exe'
+    alias pbpaste='powershell.exe -Command get-clipboard'
 fi
 
-# set an icon based on the distro
-# make sure your font is compatible with https://github.com/lukas-w/font-logos
-case $_distro in
-    *kali*)                  ICON="ﴣ";;
-    *arch*)                  ICON="";;
-    *debian*)                ICON="";;
-    *raspbian*)              ICON="";;
-    *ubuntu*)                ICON="";;
-    *elementary*)            ICON="";;
-    *fedora*)                ICON="";;
-    *coreos*)                ICON="";;
-    *gentoo*)                ICON="";;
-    *mageia*)                ICON="";;
-    *centos*)                ICON="";;
-    *opensuse*|*tumbleweed*) ICON="";;
-    *sabayon*)               ICON="";;
-    *slackware*)             ICON="";;
-    *linuxmint*)             ICON="";;
-    *alpine*)                ICON="";;
-    *nixos*)                 ICON="";;
-    *devuan*)                ICON="";;
-    *manjaro*)               ICON="";;
-    *rhel*)                  ICON="";;
-    *macos*)                 ICON="";;
-    *)                       ICON="";;
-esac
+if [[ -x "$(command -v docker)" ]]; then
+    alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive"
+    alias hadolint="docker run --rm -i hadolint/hadolint"
+fi
 
-export STARSHIP_DISTRO="$ICON"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export PYTHONDONTWRITEBYTECODE=1
+alias myip='curl ifconfig.co'
 
-#Launch Starship
+# Init starship prompt
 eval "$(starship init zsh)"
+
+
