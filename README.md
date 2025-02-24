@@ -3,7 +3,7 @@ My personal config files for Linux and Windows 10+11
 
 ## Install need software
 ```bash
-git tmux zip mc net-tools zsh unrar autojump autojump-zsh htop lnav tree bat exa wget curl 
+git tmux zip mc net-tools zsh unrar autojump autojump-zsh htop lnav tree bat exa wget curl fzf 
 ```
 
 ## Install oh-my-zsh
